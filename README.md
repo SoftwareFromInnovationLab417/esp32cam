@@ -24,6 +24,6 @@ and then, you should replace the conflict field name `resolution` into `resoluti
 you will find that the component is available(using these through the `esp_idf_sys`,
 you should reference the `binding.rs` api as well), after that no errors any more.
 
-How to use camera? [](https://github.com/ChenHuaYou/esp-cam-rs/blob/main/src/main.rs#L129)
+How to use camera? [camera relevant project code](https://github.com/ChenHuaYou/esp-cam-rs/blob/main/src/main.rs#L129)
 
-How to use wifi? [](https://github.com/ivmarkov/rust-esp32-std-demo/blob/main/src/main.rs#L1113)
+How to use wifi? [wifi relevant project code](https://github.com/ivmarkov/rust-esp32-std-demo/blob/main/src/main.rs#L1113)
