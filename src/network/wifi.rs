@@ -1,4 +1,3 @@
-use std::{net::Ipv4Addr, time::Duration};
 use anyhow::Result;
 use embedded_svc::{
   ipv4,
@@ -12,6 +11,7 @@ use esp_idf_svc::{
   ping::EspPing,
   wifi::{EspWifi, WifiWait},
 };
+use std::{net::Ipv4Addr, time::Duration};
 
 use crate::{PASS, SSID};
 
@@ -27,7 +27,13 @@ pub fn wifi(
 
   let ap_infos = wifi.scan()?;
 
+  let list = ap_infos.iter().map(|a| a.ssid.clone()).collect::<Vec<_>>();
+  for a in list {
+    println!("{}", a);
+  }
+
   let ours = ap_infos.into_iter().find(|a| a.ssid == SSID);
+
 
   let channel = if let Some(ours) = ours {
     println!(
